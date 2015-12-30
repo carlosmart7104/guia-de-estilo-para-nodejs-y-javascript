@@ -23,7 +23,7 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 * [80 caracteres por línea](#80-caracteres-por-línea)
 * [Use comillas simples](#use-comillas-simples)
 * [Las llaves de apertura van en la misma línea] (#las-llaves-de-apertura-van-en-la-misma-línea)
-* [Declarar una variable por sentencia var] (#declarar-una-variable-por-sentencia-var)
+* [Declare una variable por sentencia var] (#declare-una-variable-por-sentencia-var)
 
 ### Convenciones de nomenclatura
 * [Usar lowerCamelCase para las variables, propiedades y nombres de funciones] (#ssar-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
@@ -122,10 +122,10 @@ if (true)
 
 También, observe el uso de espacios en blanco antes y después de la declaración de estado.
 
-### Declarar una variable por sentencia var
+### Declare una variable por sentencia var
 
-Declarar una variable por sentencia var, que hace que sea más fácil de volver a reordenar las líneas. 
-Sin embargo, ignora la [Crockford] [crockfordconvention] cuando se trata de declarar variables más profundas dentro de una función, sólo hay que poner las declaraciones siempre que tenga sentido.
+Declare una variable por sentencia var, hace que sea más fácil editar el orden de las líneas. 
+Sin embargo, ignore la [Crockford] [crockfordconvention] cuando se trata de declarar variables más profundas dentro de una función, sólo hay que poner las declaraciones siempre que tenga sentido.
 
 *Correcto:*
 
