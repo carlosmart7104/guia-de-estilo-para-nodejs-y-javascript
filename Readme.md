@@ -55,3 +55,35 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 * [No extienda prototypes incorporados] (#no-extienda-prototypes-incorporados)
 
 ## Formateo
+
+### 2 Espacios para la sangría
+
+Utilice 2 espacios para indentar el código y un jure que nunca mezclará tabs y
+espacios, es un tipo especial de infierno que le está esperando de algún modo.
+
+### Saltos de línea
+
+Los saltos de línea de estilo UNIX, use (`\ n`), y un carácter de nueva línea como el último carácter de un archivo. 
+Los saltos de línea de estilo de Windows (`\ r \ n`) están prohibidos dentro de cualquier repositorio.
+
+### Sin espacios en blanco al terminar
+
+Al igual que se cepilla los dientes después de cada comida, limpie todo el conjunto de espacios en blanco en los archivos de JS antes de hacer un commit. De lo contrario el olor a podrido de la negligencia y el descuido finalmente le dejará sin colaboradores y / o compañeros de trabajo.
+
+### Utilice punto y coma
+
+Según [scientific research] [hnsemicolons], el uso de punto y coma es un valor fundamental de nuestra comunidad. 
+Tenga en cuenta los puntos de [the opposition] [], pero sea un tradicionalista cuando se trata de abusar de los mecanismos de corrección de errores para
+placeres sintácticos baratos.
+
+the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
+[hnsemicolons]: http://news.ycombinator.com/item?id=1547647
+
+### 80 caracteres por línea
+
+Limíte sus líneas a 80 caracteres. Sí, las pantallas se han vuelto mucho más grandes en los últimos años, pero su cerebro no tiene la capacidad.
+Utilice el espacio adicional para la pantalla dividida, su editor soporta eso, ¿verdad?
+
+### Use comillas simples
+
+Use comillas simples, a menos que usted esté escribiendo JSON.
