@@ -28,33 +28,33 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 * [Declare una variable por sentencia var](#declare-una-variable-por-sentencia-var)
 
 ### Convenciones de nomenclatura
-* [Usar lowerCamelCase para las variables, propiedades y nombres de funciones](#usar-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
-* [Usar UpperCamelCase en nombres de clase](#usar-uppercamelcase-en-nombres-de-clase)
-* [Usar MAYÚSCULAS para Constantes](#usar-mayusculas-para-constantes)
+* [Use lowerCamelCase para las variables, propiedades y nombres de funciones](#use-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
+* [Use UpperCamelCase para nombres de clase](#use-uppercamelcase-para-nombres-de-clase)
+* [Use MAYÚSCULAS para Constantes](#use-mayúsculas-para-constantes)
 
 ### Variables
-* [Creación de Objetos/ Arrays](#creacion-de-objetos--arrays)
+* [Creación de Objetos / Matrices](#creación-de-objetos--matrices)
 
 ### Condicionales
-* [Uso del operador ===]( uso-del-operador-)
-* [El uso de varias líneas del operador ternario](#el-uso-de-varias-lineas-del-operador-ternario)
-* [Uso de condiciones descriptivas](#uso-de-condiciones-descriptivas)
+* [Utilice el operador ===](#utilice-el-operador-)
+* [Utilice el operador ternario en multiples líneas](#utilice-el-operador-ternario-en-multiples-líneas)
+* [Utilice condiciones descriptivas](#utilice-condiciones-descriptivas)
 
 ### Funciones
 * [Escriba funciones pequeñas](#escriba-funciones-pequeñas)
-* [Retorne a funciones anteriores](#Retorne-a-funciones-anteriores)
+* [Retorne rápidamente las funciones](#retorne-rápidamente-las-funciones)
 * [Nombre sus closures](#nombre-sus-closures)
-* [No usar closures anidados](#no-usar-closures-anidados)
-* [Concatenar Métodos](#concatenar-metodos)
+* [No use closures anidados](#no-use-closures-anidados)
+* [Concatene los métodos claramente](#concatene-los-métodos-claramente)
 
 ### Comentarios
-* [Usar barras para comentarios](#usar-barras-para-comentarios)
+* [Use diagonales para los comentarios](#use-diagonales-para-los-comentarios)
 
 ### Miscelanea
 * [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
-* [Requieres al inicio](#requieres-al-inicio)
+* [Requieres al inicio](#requieres-al-principio)
 * [Getters y setters](#getters-y-setters)
-* [No extienda prototypes incorporados](#no-extienda-prototypes-incorporados)
+* [No extienda prototypes incorporados](#no-extienda-prototypes-ya-incorporados)
 
 ## Formateo
 
@@ -177,7 +177,7 @@ var adminUser = db.query('SELECT * FROM users ...');
 var admin_user = db.query('SELECT * FROM users ...');
 ```
 
-### Use UpperCamelCase de nombres de clase
+### Use UpperCamelCase para nombres de clase
 
 Los nombres de clase deben ser capitalizados usando `UpperCamelCase`.
 
@@ -275,7 +275,7 @@ if (a == '') {
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
 
-### Utilice operador ternario multilínea
+### Utilice el operador ternario en multiples líneas
 
 El operador ternario no debe utilizarse en una sola línea. 
 Divídalo en varias líneas.
@@ -318,14 +318,14 @@ if (password.length >= 4 && /^(?=.*\d).{4,}$/.test(password)) {
 
 ## Funciones
 
-### Escribe funciones pequeñas
+### Escriba funciones pequeñas
 
 Mantenga sus funciones cortas. 
 Una buena función cabe en una diapositiva que las personas en
 la última fila de una sala grande pueden leer cómodamente. 
 Aún contando con que ellos no tengan una visión perfecta y debe limitarse a aproximadamente 15 líneas de código por función.
 
-### Regreso anticipado de las funciones
+### Retorne rápidamente las funciones
 
 Para evitar profundidad de anidamiento de las declaraciones if, devuelva el valor de una función tan pronto como sea posible.
 
@@ -419,7 +419,7 @@ setTimeout(function() {
 ```
 
 
-### Método de encadenamiento
+### Concatene los métodos claramente
 
 Si desea encadenar métodos se debe utilizar un método por línea.
 También debe sangrar estos métodos lo que hace más fácil denotar que son parte de la misma cadena.
@@ -464,7 +464,7 @@ User.findOne({ name: 'foo' }).populate('bar')
 
 ## Comentarios
 
-### Use diagonales para comentarios
+### Use diagonales para los comentarios
 
 Utilice diagonales tanto para una sola línea como para múltiples líneas de comentarios. 
 Trate de escribir comentarios que expliquen los mecanismos de nivel superior o aclaren segmentos difíciles de su código. 
