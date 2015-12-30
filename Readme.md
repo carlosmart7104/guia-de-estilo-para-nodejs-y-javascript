@@ -158,3 +158,398 @@ while (keys.length) {
 [crockfordconvention]: http://javascript.crockford.com/code.html
 
 ### Convenciones de nomenclatura
+
+### Use lowerCamelCase para las variables, propiedades y nombres de funciones
+
+Las variables, propiedades y nombres de funciones deben usar `lowerCamelCase`. 
+Ellos también deben ser descriptivos. 
+Las abreviaturas en variables de carácter individual y poco frecuente generalmente deben ser evitados.
+
+*Correcto:*
+
+```js
+var adminUser = db.query('SELECT * FROM users ...');
+```
+
+*Incorrecto:*
+
+```js
+var admin_user = db.query('SELECT * FROM users ...');
+```
+
+### Use UpperCamelCase de nombres de clase
+
+Los nombres de clase deben ser capitalizados usando `UpperCamelCase`.
+
+*Correcto:*
+
+```js
+function BankAccount() {
+}
+```
+
+*Incorrecto:*
+
+```js
+function bank_Account() {
+}
+```
+
+## Use MAYÚSCULAS para Constantes
+
+Las constantes deben ser declaradas como variables regulares o propiedades de clase estáticos, utilizando todas las letras mayúsculas.
+
+*Correcto:*
+
+```js
+var SECOND = 1 * 1000;
+
+function File() {
+}
+File.FULL_PERMISSIONS = 0777;
+```
+
+*Incorrecto:*
+
+```js
+const SECOND = 1 * 1000;
+
+function File() {
+}
+File.fullPermissions = 0777;
+```
+
+[const]: https://developer.mozilla.org/en/JavaScript/Reference/Statements/const
+
+## Variables
+
+### Creación de Objetos / Matrices
+
+Utilice coma al final y ponga declaraciones *breves* en una sola línea. Sólo entrecomille claves cuando el intérprete lo requiera:
+
+*Correcto:*
+
+```js
+var a = ['hello', 'world'];
+var b = {
+  good: 'code',
+  'is generally': 'pretty',
+};
+```
+
+*Incorrecto:*
+
+```js
+var a = [
+  'hello', 'world'
+];
+var b = {"good": 'code'
+        , is generally: 'pretty'
+        };
+```
+
+## Condicionales
+
+### Utilice el operador ===
+
+La programación no se trata de recordar [reglas estúpidas] [comparisonoperators]. Use el operador de igualdad triple, ya que funcionará como se espera.
+
+*Correcto:*
+
+```js
+var a = 0;
+if (a !== '') {
+  console.log('winning');
+}
+
+```
+
+*Incorrecto:*
+
+```js
+var a = 0;
+if (a == '') {
+  console.log('losing');
+}
+```
+
+[comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
+
+### Utilice operador ternario multilínea
+
+El operador ternario no debe utilizarse en una sola línea. 
+Divídalo en varias líneas.
+
+*Correcto:*
+
+```js
+var foo = (a === b)
+  ? 1
+  : 2;
+```
+
+*Incorrecto:*
+
+```js
+var foo = (a === b) ? 1 : 2;
+```
+
+### Utilice condiciones descriptivas
+
+Cualquier condición no trivial debe ser asignada a una función o variable con un nombre que la describa:
+
+*Correcto:*
+
+```js
+var isValidPassword = password.length >= 4 && /^(?=.*\d).{4,}$/.test(password);
+
+if (isValidPassword) {
+  console.log('winning');
+}
+```
+
+*Incorrecto:*
+
+```js
+if (password.length >= 4 && /^(?=.*\d).{4,}$/.test(password)) {
+  console.log('losing');
+}
+```
+
+## Funciones
+
+### Escribe funciones pequeñas
+
+Mantenga sus funciones cortas. 
+Una buena función cabe en una diapositiva que las personas en
+la última fila de una sala grande pueden leer cómodamente. 
+Aún contando con que ellos no tengan una visión perfecta y debe limitarse a aproximadamente 15 líneas de código por función.
+
+### Regreso anticipado de las funciones
+
+Para evitar profundidad de anidamiento de las declaraciones if, devuelva el valor de una función tan pronto como sea posible.
+
+*Correcto:*
+
+```js
+function isPercentage(val) {
+  if (val < 0) {
+    return false;
+  }
+
+  if (val > 100) {
+    return false;
+  }
+
+  return true;
+}
+```
+
+*Incorrecto:*
+
+```js
+function isPercentage(val) {
+  if (val >= 0) {
+    if (val < 100) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
+}
+```
+
+O para este ejemplo particular, también puede estar bien para acortar las cosas aún mejor:
+
+```js
+function isPercentage(val) {
+  var isInRange = (val >= 0 && val <= 100);
+  return isInRange;
+}
+```
+
+### Nombre sus closures
+
+Siéntase libre de dar a sus closures un nombre. 
+Esto demuestra que usted se preocupa por ellos, y producirá mejores seguimientos de stack, heap y esquemas de cpu.
+
+*Correcto:*
+
+```js
+req.on('end', function onEnd() {
+  console.log('winning');
+});
+```
+
+*Incorrecto:*
+
+```js
+req.on('end', function() {
+  console.log('losing');
+});
+```
+
+### No use closures anidados
+
+Utilice los closures, pero no los anide. 
+De lo contrario, el código se convertirá en un desastre.
+
+*Correcto:*
+
+```js
+setTimeout(function() {
+  client.connect(afterConnect);
+}, 1000);
+
+function afterConnect() {
+  console.log('winning');
+}
+```
+
+*Incorrecto:*
+
+```js
+setTimeout(function() {
+  client.connect(function() {
+    console.log('losing');
+  });
+}, 1000);
+```
+
+
+### Método de encadenamiento
+
+Si desea encadenar métodos se debe utilizar un método por línea.
+También debe sangrar estos métodos lo que hace más fácil denotar que son parte de la misma cadena.
+
+*Correcto:*
+
+```js
+User
+  .findOne({ name: 'foo' })
+  .populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+````
+
+*Incorrecto:*
+
+```js
+User
+.findOne({ name: 'foo' })
+.populate('bar')
+.exec(function(err, user) {
+  return true;
+});
+
+User.findOne({ name: 'foo' })
+  .populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+
+User.findOne({ name: 'foo' }).populate('bar')
+.exec(function(err, user) {
+  return true;
+});
+
+User.findOne({ name: 'foo' }).populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+````
+
+## Comentarios
+
+### Use diagonales para comentarios
+
+Utilice diagonales tanto para una sola línea como para múltiples líneas de comentarios. 
+Trate de escribir comentarios que expliquen los mecanismos de nivel superior o aclaren segmentos difíciles de su código. 
+No use los comentarios para replantear las cosas triviales.
+
+*Correcto:*
+
+```js
+// 'ID_SOMETHING=VALUE' -> ['ID_SOMETHING=VALUE', 'SOMETHING', 'VALUE']
+var matches = item.match(/ID_([^\n]+)=([^\n]+)/));
+
+// This function has a nasty side effect where a failure to increment a
+// redis counter used for statistics will cause an exception. This needs
+// to be fixed in a later iteration.
+function loadUser(id, cb) {
+  // ...
+}
+
+var isSessionValid = (session.expires < Date.now());
+if (isSessionValid) {
+  // ...
+}
+```
+
+*Incorrecto:*
+
+```js
+// Execute a regex
+var matches = item.match(/ID_([^\n]+)=([^\n]+)/);
+
+// Usage: loadUser(5, function() { ... })
+function loadUser(id, cb) {
+  // ...
+}
+
+// Check if the session is valid
+var isSessionValid = (session.expires < Date.now());
+// If the session is valid
+if (isSessionValid) {
+  // ...
+}
+```
+
+## Miscelanea
+
+### Object.freeze, Object.preventExtensions, Object.seal, with, eval
+
+Mierdas locas que es probable que nunca necesite. 
+Manténgase alejado de ellas.
+
+### Requieres al principio
+
+Ponga siempre los requieres en la parte superior del archivo para ilustrar claramente sus dependencias. Además de dar una visión general de los demás en un vistazo rápido de las dependencias y posible impacto de la memoria, que permite determinar si necesitan un archivo package.json si optan por utilizar el archivo en otro lugar.
+
+### Getters y setters (Captadores y definidores)
+
+No utilice setters, causan más problemas para las personas que tratan de utilizar su software de los que pueden resolver.
+
+Siéntase libre de utilizar getters que están libres de los [efectos secundarios] [efecto secundario], al igual que proporcionar una propiedad length para una colección de clases.
+
+[efecto secundario]: http://en.wikipedia.org/wiki/Side_effect_(computer_science)
+
+### No extienda prototypes ya incorporados
+
+No extienda el prototype de objetos nativos de JavaScript. 
+Tu yo del futuro estará por siempre agradecido.
+
+*Correcto:*
+
+```js
+var a = [];
+if (!a.length) {
+  console.log('winning');
+}
+```
+
+*Incorrecto:*
+
+```js
+Array.prototype.empty = function() {
+  return !this.length;
+}
+
+var a = [];
+if (a.empty()) {
+  console.log('losing');
+}
+```
