@@ -30,7 +30,7 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 ### Convenciones de nomenclatura
 * [Use lowerCamelCase para las variables, propiedades y nombres de funciones](#use-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
 * [Use UpperCamelCase para nombres de clase](#use-uppercamelcase-para-nombres-de-clase)
-* [Use MAYÚSCULAS para las constantes](#use-MAYÚSCULAS-para-las-constantes)
+* [Use MAYÚSCULAS para las constantes](#use-MAYUSCULAS-para-las-constantes)
 
 ### Variables
 * [Creación de Objetos / Matrices](#creación-de-objetos--matrices)
