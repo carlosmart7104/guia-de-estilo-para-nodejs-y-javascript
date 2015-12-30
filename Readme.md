@@ -24,37 +24,37 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 * [Utilice punto y coma](#utilice-punto-y-coma)
 * [80 caracteres por línea](#80-caracteres-por-línea)
 * [Use comillas simples](#use-comillas-simples)
-* [Las llaves de apertura van en la misma línea] (#las-llaves-de-apertura-van-en-la-misma-línea)
-* [Declare una variable por sentencia var] (#declare-una-variable-por-sentencia-var)
+* [Las llaves de apertura van en la misma línea](#las-llaves-de-apertura-van-en-la-misma-línea)
+* [Declare una variable por sentencia var](#declare-una-variable-por-sentencia-var)
 
 ### Convenciones de nomenclatura
-* [Usar lowerCamelCase para las variables, propiedades y nombres de funciones] (#ssar-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
-* [Usar UpperCamelCase en nombres de clase] (#usar-uppercamelcase-en-nombres-de-clase)
-* [Usar MAYÚSCULAS para Constantes] (#usar-mayusculas-para-constantes)
+* [Usar lowerCamelCase para las variables, propiedades y nombres de funciones](#usar-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
+* [Usar UpperCamelCase en nombres de clase](#usar-uppercamelcase-en-nombres-de-clase)
+* [Usar MAYÚSCULAS para Constantes](#usar-mayusculas-para-constantes)
 
 ### Variables
-* [Creación de Objetos/ Arrays] (#creacion-de-objetos--arrays)
+* [Creación de Objetos/ Arrays](#creacion-de-objetos--arrays)
 
 ### Condicionales
-* [Uso del operador ===] ( uso-del-operador-)
-* [El uso de varias líneas del operador ternario] (#el-uso-de-varias-lineas-del-operador-ternario)
-* [Uso de condiciones descriptivas] (#uso-de-condiciones-descriptivas)
+* [Uso del operador ===]( uso-del-operador-)
+* [El uso de varias líneas del operador ternario](#el-uso-de-varias-lineas-del-operador-ternario)
+* [Uso de condiciones descriptivas](#uso-de-condiciones-descriptivas)
 
 ### Funciones
-* [Escriba funciones pequeñas] (#escriba-funciones-pequeñas)
-* [Retorne a funciones anteriores] (#Retorne-a-funciones-anteriores)
-* [Nombre sus closures] (#nombre-sus-closures)
-* [No usar closures anidados] (#no-usar-closures-anidados)
-* [Concatenar Métodos] (#concatenar-metodos)
+* [Escriba funciones pequeñas](#escriba-funciones-pequeñas)
+* [Retorne a funciones anteriores](#Retorne-a-funciones-anteriores)
+* [Nombre sus closures](#nombre-sus-closures)
+* [No usar closures anidados](#no-usar-closures-anidados)
+* [Concatenar Métodos](#concatenar-metodos)
 
 ### Comentarios
-* [Usar barras para comentarios] (#usar-barras-para-comentarios)
+* [Usar barras para comentarios](#usar-barras-para-comentarios)
 
 ### Miscelanea
-* [Object.freeze, Object.preventExtensions, Object.seal, with, eval] (#objectfreeze-objectpreventextensions-objectseal-with-eval)
-* [Requieres al inicio] (#requieres-al-inicio)
-* [Getters y setters] (#getters-y-setters)
-* [No extienda prototypes incorporados] (#no-extienda-prototypes-incorporados)
+* [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
+* [Requieres al inicio](#requieres-al-inicio)
+* [Getters y setters](#getters-y-setters)
+* [No extienda prototypes incorporados](#no-extienda-prototypes-incorporados)
 
 ## Formateo
 
