@@ -30,7 +30,7 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 ### Convenciones de nomenclatura
 * [Use lowerCamelCase para las variables, propiedades y nombres de funciones](#use-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
 * [Use UpperCamelCase para nombres de clase](#use-uppercamelcase-para-nombres-de-clase)
-* [Use MAYÚSCULAS para las constantes](#use-MAYUSCULAS-para-las-constantes)
+* [Use MAYÚSCULAS para las constantes](#use-mayúsculas-para-las-constantes)
 
 ### Variables
 * [Creación de Objetos / Matrices](#creación-de-objetos--matrices)
@@ -195,7 +195,7 @@ function bank_Account() {
 }
 ```
 
-## Use MAYÚSCULAS para las constantes
+## Use mayúsculas para las constantes
 
 Las constantes deben ser declaradas como variables regulares o propiedades de clase estáticos, utilizando todas las letras mayúsculas.
 
