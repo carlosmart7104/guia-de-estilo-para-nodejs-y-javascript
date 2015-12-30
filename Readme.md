@@ -16,14 +16,14 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 ## Tabla de contenido
 
 ### Formateo
-* [2 Espacios para la identación](#2-espacios-para-la-indentación)  
+* [2 Espacios para la identación](#2-espacios-para-la-indentación)
 * [Nuevas lineas](#nuevas-lineas)
 * [No dejar espacios en blanco](#no-dejar-espacios-en-blanco)
 * [Use punto y coma](#use-punto-y-coma)
 * [80 caracteres por línea](#80-caracteres-por-línea)
 * [Usar comillas simples](#usar-comillas-simples)
-* [Las llaves de apertura van en la misma línea](#Las-llaves-de-apertura-van-en-la-misma-línea)
-* [Declarar las variables con la sentencia var](#Declarar-las-variables-con-la-sentencia-var)
+* [Las llaves de apertura van en la misma línea] (#Las-llaves-de-apertura-van-en-la-misma-línea)
+* [Declarar las variables con la sentencia var] (#Declarar-las-variables-con-la-sentencia-var)
 
 ### Convenciones de nomenclatura
 * [Usar lowerCamelCase para las variables, propiedades y nombres de funciones] (#Usar-lowerCamelCase para las variables-propiedades-y-nombres-de-
@@ -41,11 +41,19 @@ funciones)
 * [Uso de condiciones descriptivas] (#uso-de-condiciones-descriptivas)
 
 ### Funciones
-* [Escribe funciones pequeñas] (#escribe-funciones-pequeñas)
-* [Retorna a funciones anteriores] (#Retorna-a-funciones-anteriores)
+* [Escriba funciones pequeñas] (#escriba-funciones-pequeñas)
+* [Retorne a funciones anteriores] (#Retorne-a-funciones-anteriores)
 * [Nombre sus closures] (#nombre-sus-closures)
 * [No usar closures anidados] (#no-usar-closures-anidados)
 * [Concatenar Métodos] (#concatenar-metodos)
 
 ### Comentarios
 * [Usar barras para comentarios] (#usar-barras-para-comentarios)
+
+### Miscelanea
+* [Object.freeze, Object.preventExtensions, Object.seal, with, eval] (#objectfreeze-objectpreventextensions-objectseal-with-eval)
+* [Requieres al inicio] (#requieres-al-inicio)
+* [Getters y setters] (#getters-y-setters)
+* [No extienda prototypes incorporados] (#no-extienda-prototypes-incorporados)
+
+## Formateo
