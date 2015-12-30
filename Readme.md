@@ -1,6 +1,6 @@
 # Guía de estilo para Node.js
 
-Alerta!, incompleto.
+Alerta!, incompleto. Este documento está siendo traducido ahora.
 
 Esta es una guía para escribir código Node.js coherente y estéticamente agradable.
 Se inspira en lo que es popular dentro de la comunidad, y algunas
