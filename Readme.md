@@ -30,7 +30,7 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 ### Convenciones de nomenclatura
 * [Use lowerCamelCase para las variables, propiedades y nombres de funciones](#use-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
 * [Use UpperCamelCase para nombres de clase](#use-uppercamelcase-para-nombres-de-clase)
-* [Use MAYÚSCULAS para las constantes](#use-mayusculas-para-las-constantes)
+* [Use MAYÚSCULAS para las constantes](#use-MAYÚSCULAS-para-las-constantes)
 
 ### Variables
 * [Creación de Objetos / Matrices](#creación-de-objetos--matrices)
@@ -53,7 +53,7 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 ### Miscelanea
 * [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
 * [Requieres al principio](#requieres-al-principio)
-* [Getters y setters](#getters-y-setters-)
+* [Getters y setters](#getters-y-setters)
 * [No extienda prototypes incorporados](#no-extienda-prototypes-ya-incorporados)
 
 ## Formateo
