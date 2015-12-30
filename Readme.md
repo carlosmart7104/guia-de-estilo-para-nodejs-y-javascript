@@ -17,13 +17,13 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 
 ### Formateo
 * [2 Espacios para la sangría](#2-espacios-para-la-sangría)
-* [Saltos de línea](#Saltos-de-línea)
+* [Saltos de línea](#saltos-de-línea)
 * [No dejar espacios en blanco](#no-dejar-espacios-en-blanco)
-* [Use punto y coma](#use-punto-y-coma)
+* [Utilice punto y coma](#utilice-punto-y-coma)
 * [80 caracteres por línea](#80-caracteres-por-línea)
-* [Usar comillas simples](#usar-comillas-simples)
+* [Use comillas simples](#use-comillas-simples)
 * [Las llaves de apertura van en la misma línea] (#las-llaves-de-apertura-van-en-la-misma-línea)
-* [Declarar las variables con la sentencia var] (#declarar-las-variables-con-la-sentencia-var)
+* [Declarar una variable por sentencia var] (#declarar-una-variable-por-sentencia-var)
 
 ### Convenciones de nomenclatura
 * [Usar lowerCamelCase para las variables, propiedades y nombres de funciones] (#ssar-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
@@ -66,7 +66,7 @@ espacios, es un tipo especial de infierno que le está esperando de algún modo.
 Los saltos de línea de estilo UNIX, use (`\ n`), y un carácter de nueva línea como el último carácter de un archivo. 
 Los saltos de línea de estilo de Windows (`\ r \ n`) están prohibidos dentro de cualquier repositorio.
 
-### Sin espacios en blanco al terminar
+### No dejar espacios en blanco
 
 Al igual que se cepilla los dientes después de cada comida, limpie todo el conjunto de espacios en blanco en los archivos de JS antes de hacer un commit. De lo contrario el olor a podrido de la negligencia y el descuido finalmente le dejará sin colaboradores y / o compañeros de trabajo.
 
@@ -99,7 +99,7 @@ foo var = 'bar';
 `` `js
 foo var = "bar";
 `` `
-### Llaves de apertura van en la misma línea
+### Las llaves de apertura van en la misma línea
 
 Sus llaves de apertura van en la misma línea que el comunicado.
 
