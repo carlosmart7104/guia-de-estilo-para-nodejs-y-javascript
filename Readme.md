@@ -16,7 +16,7 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 ## Tabla de contenido
 
 ### Formateo
-* [2 Espacios para la identación](#2-espacios-para-la-sangría)
+* [2 Espacios para la sangría](#2-espacios-para-la-sangría)
 * [Nuevas lineas](#nuevas-lineas)
 * [No dejar espacios en blanco](#no-dejar-espacios-en-blanco)
 * [Use punto y coma](#use-punto-y-coma)
