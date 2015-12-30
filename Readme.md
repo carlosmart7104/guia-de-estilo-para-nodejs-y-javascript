@@ -20,7 +20,7 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 ### Formateo
 * [2 Espacios para la sangría](#2-espacios-para-la-sangría)
 * [Saltos de línea](#saltos-de-línea)
-* [No dejar espacios en blanco](#no-dejar-espacios-en-blanco)
+* [No deje espacios en blanco](#no-deje-espacios-en-blanco)
 * [Utilice punto y coma](#utilice-punto-y-coma)
 * [80 caracteres por línea](#80-caracteres-por-línea)
 * [Use comillas simples](#use-comillas-simples)
@@ -65,25 +65,25 @@ espacios, es un tipo especial de infierno que le está esperando de algún modo.
 
 ### Saltos de línea
 
-Los saltos de línea de estilo UNIX, use (`\ n`), y un carácter de nueva línea como el último carácter de un archivo. 
-Los saltos de línea de estilo de Windows (`\ r \ n`) están prohibidos dentro de cualquier repositorio.
+Use solo saltos de línea de estilo UNIX, use (`\ n`), y un carácter de nueva línea como el último carácter de un archivo. 
+Los saltos de línea de estilo Windows (`\ r \ n`) están prohibidos dentro de cualquier repositorio.
 
-### No dejar espacios en blanco
+### No deje espacios en blanco
 
-Al igual que se cepilla los dientes después de cada comida, limpie todo el conjunto de espacios en blanco en los archivos de JS antes de hacer un commit. De lo contrario el olor a podrido de la negligencia y el descuido finalmente le dejará sin colaboradores y / o compañeros de trabajo.
+Al igual que se cepilla los dientes después de cada comida, limpie todo el conjunto de espacios en blanco en los archivos de JS antes de hacer un commit. De lo contrario el olor a podrido de la negligencia y el descuido finalmente le dejará sin colaboradores y/o compañeros de trabajo.
 
 ### Utilice punto y coma
 
 Según [scientific research] [hnsemicolons], el uso de punto y coma es un valor fundamental de nuestra comunidad. 
-Tenga en cuenta los puntos de [the opposition] [], pero sea un tradicionalista cuando se trata de abusar de los mecanismos de corrección de errores para
-placeres sintácticos baratos.
+Tenga en cuenta los puntos de [the opposition][], pero sea un tradicionalista cuando se trata de abusar de los mecanismos de corrección de errores para placeres sintácticos baratos.
 
-the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
+[the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
 ### 80 caracteres por línea
 
-Limíte sus líneas a 80 caracteres. Sí, las pantallas se han vuelto mucho más grandes en los últimos años, pero su cerebro no tiene la capacidad.
+Limíte sus líneas a 80 caracteres. 
+Sí, las pantallas se han vuelto mucho más grandes en los últimos años, pero su cerebro no tiene la capacidad.
 Utilice el espacio adicional para la pantalla dividida, su editor soporta eso, ¿verdad?
 
 ### Use comillas simples
@@ -103,7 +103,7 @@ foo var = "bar";
 ```
 ### Las llaves de apertura van en la misma línea
 
-Sus llaves de apertura van en la misma línea que el comunicado.
+Sus llaves de apertura van en la misma línea que el enunciado.
 
 *Correcto:*
 
@@ -132,7 +132,8 @@ Sin embargo, ignore la [Crockford] [crockfordconvention] cuando se trata de decl
 *Correcto:*
 
 ```js
-var keys   = ['foo', 'bar'];var values = [23, 42];
+var keys   = ['foo', 'bar'];
+var values = [23, 42];
 
 var object = {};
 while (keys.length) {
@@ -162,8 +163,8 @@ while (keys.length) {
 ### Use lowerCamelCase para las variables, propiedades y nombres de funciones
 
 Las variables, propiedades y nombres de funciones deben usar `lowerCamelCase`. 
-Ellos también deben ser descriptivos. 
-Las abreviaturas en variables de carácter individual y poco frecuente generalmente deben ser evitados.
+Estos también deben ser descriptivos. 
+Las abreviaturas en variables de carácter individual y poco frecuente generalmente deben ser evitadas.
 
 *Correcto:*
 
@@ -321,13 +322,12 @@ if (password.length >= 4 && /^(?=.*\d).{4,}$/.test(password)) {
 ### Escriba funciones pequeñas
 
 Mantenga sus funciones cortas. 
-Una buena función cabe en una diapositiva que las personas en
-la última fila de una sala grande pueden leer cómodamente. 
+Una buena función cabe en una diapositiva que las personas en la última fila de una sala grande pueden leer cómodamente. 
 Aún contando con que ellos no tengan una visión perfecta y debe limitarse a aproximadamente 15 líneas de código por función.
 
 ### Retorne rápidamente las funciones
 
-Para evitar profundidad de anidamiento de las declaraciones if, devuelva el valor de una función tan pronto como sea posible.
+Para evitar profundidad de anidamiento en las declaraciones if, devuelva el valor de una función tan pronto como sea posible.
 
 *Correcto:*
 
@@ -530,7 +530,7 @@ Siéntase libre de utilizar getters que están libres de los [efectos secundario
 ### No extienda prototypes ya incorporados
 
 No extienda el prototype de objetos nativos de JavaScript. 
-Tu yo del futuro estará por siempre agradecido.
+Su yo del futuro estará por siempre agradecido.
 
 *Correcto:*
 
