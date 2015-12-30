@@ -92,35 +92,35 @@ Use comillas simples, a menos que usted esté escribiendo JSON.
 
 *Correcto:*
 
-`` `js
+```js
 foo var = 'bar';
-`` `
+```
 
 *Incorrecto:*
 
-`` `js
+```js
 foo var = "bar";
-`` `
+```
 ### Las llaves de apertura van en la misma línea
 
 Sus llaves de apertura van en la misma línea que el comunicado.
 
 *Correcto:*
 
-`` `js
+```js
 if (true) {
   console.log ('Ganaste!');
 }
-`` `
+```
 
 *Incorrecto:*
 
-`` `js
+```js
 if (true)
 {
   console.log ('Perdiste :C');
 }
-`` `
+```
 
 También, observe el uso de espacios en blanco antes y después de la declaración de estado.
 
