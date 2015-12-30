@@ -22,13 +22,11 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 * [Use punto y coma](#use-punto-y-coma)
 * [80 caracteres por línea](#80-caracteres-por-línea)
 * [Usar comillas simples](#usar-comillas-simples)
-* [Las llaves de apertura van en la misma línea] (#Las-llaves-de-apertura-van-en-la-misma-línea)
-* [Declarar las variables con la sentencia var] (#Declarar-las-variables-con-la-sentencia-var)
+* [Las llaves de apertura van en la misma línea] (#las-llaves-de-apertura-van-en-la-misma-línea)
+* [Declarar las variables con la sentencia var] (#declarar-las-variables-con-la-sentencia-var)
 
 ### Convenciones de nomenclatura
-* [Usar lowerCamelCase para las variables, propiedades y nombres de funciones] (#Usar-lowerCamelCase para las variables-propiedades-y-nombres-de-
-
-funciones)
+* [Usar lowerCamelCase para las variables, propiedades y nombres de funciones] (#ssar-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
 * [Usar UpperCamelCase en nombres de clase] (#usar-uppercamelcase-en-nombres-de-clase)
 * [Usar MAYÚSCULAS para Constantes] (#usar-mayusculas-para-constantes)
 
