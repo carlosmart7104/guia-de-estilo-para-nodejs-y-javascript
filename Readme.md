@@ -17,7 +17,7 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 
 ### Formateo
 * [2 Espacios para la sangría](#2-espacios-para-la-sangría)
-* [Nuevas lineas](#nuevas-lineas)
+* [Saltos de línea](#Saltos-de-línea)
 * [No dejar espacios en blanco](#no-dejar-espacios-en-blanco)
 * [Use punto y coma](#use-punto-y-coma)
 * [80 caracteres por línea](#80-caracteres-por-línea)
