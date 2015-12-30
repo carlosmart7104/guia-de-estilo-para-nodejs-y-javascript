@@ -87,3 +87,72 @@ Utilice el espacio adicional para la pantalla dividida, su editor soporta eso, �
 ### Use comillas simples
 
 Use comillas simples, a menos que usted esté escribiendo JSON.
+
+*Correcto:*
+
+`` `js
+foo var = 'bar';
+`` `
+
+*Incorrecto:*
+
+`` `js
+foo var = "bar";
+`` `
+### Llaves de apertura van en la misma línea
+
+Sus llaves de apertura van en la misma línea que el comunicado.
+
+*Correcto:*
+
+`` `js
+if (true) {
+  console.log ('Ganaste!');
+}
+`` `
+
+*Incorrecto:*
+
+`` `js
+if (true)
+{
+  console.log ('Perdiste :C');
+}
+`` `
+
+También, observe el uso de espacios en blanco antes y después de la declaración de estado.
+
+### Declarar una variable por sentencia var
+
+Declarar una variable por sentencia var, que hace que sea más fácil de volver a reordenar las líneas. 
+Sin embargo, ignora la [Crockford] [crockfordconvention] cuando se trata de declarar variables más profundas dentro de una función, sólo hay que poner las declaraciones siempre que tenga sentido.
+
+*Correcto:*
+
+```js
+var keys   = ['foo', 'bar'];var values = [23, 42];
+
+var object = {};
+while (keys.length) {
+  var key = keys.pop();
+  object[key] = values.pop();
+}
+```
+
+*Incorrecto:*
+
+```js
+var keys = ['foo', 'bar'],
+    values = [23, 42],
+    object = {},
+    key;
+
+while (keys.length) {
+  key = keys.pop();
+  object[key] = values.pop();
+}
+```
+
+[crockfordconvention]: http://javascript.crockford.com/code.html
+
+### Convenciones de nomenclatura
