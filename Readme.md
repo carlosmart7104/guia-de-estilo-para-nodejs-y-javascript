@@ -30,7 +30,7 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 ### Convenciones de nomenclatura
 * [Use lowerCamelCase para las variables, propiedades y nombres de funciones](#use-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones)
 * [Use UpperCamelCase para nombres de clase](#use-uppercamelcase-para-nombres-de-clase)
-* [Use MAYÚSCULAS para las constantes](#use-mayúsculas-para-las-constantes)
+* [Use MAYÚSCULAS para las constantes](#use-mayusculas-para-las-constantes)
 
 ### Variables
 * [Creación de Objetos / Matrices](#creación-de-objetos--matrices)
@@ -52,8 +52,8 @@ Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuer
 
 ### Miscelanea
 * [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
-* [Requieres al inicio](#requieres-al-principio)
-* [Getters y setters](#getters-y-setters)
+* [Requieres al principio](#requieres-al-principio)
+* [Getters y setters](#getters-y-setters-)
 * [No extienda prototypes incorporados](#no-extienda-prototypes-ya-incorporados)
 
 ## Formateo
@@ -519,7 +519,7 @@ Manténgase alejado de ellas.
 
 Ponga siempre los requieres en la parte superior del archivo para ilustrar claramente sus dependencias. Además de dar una visión general de los demás en un vistazo rápido de las dependencias y posible impacto de la memoria, que permite determinar si necesitan un archivo package.json si optan por utilizar el archivo en otro lugar.
 
-### Getters y setters (Captadores y definidores)
+### Getters y setters
 
 No utilice setters, causan más problemas para las personas que tratan de utilizar su software de los que pueden resolver.
 
