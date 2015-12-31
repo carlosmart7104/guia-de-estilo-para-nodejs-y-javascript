@@ -11,7 +11,7 @@ Esta guía fue creada por [Félix Geisendörfer] (http://felixge.de/) y está
 licenciada bajo la licencia [CC BY-SA 3.0] (http://creativecommons.org/licenses/by-sa/3.0/). 
 Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuerdo a sus preferencias.
 
-! [Licencia Creative Commons] (http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
+[Licencia Creative Commons](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
 ## Tabla de contenido
 
