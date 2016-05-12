@@ -7,7 +7,7 @@ opiniones personales.
 Hay una .jshintrc que hace cumplir estas normas tan estrechamente como sea posible. 
 Puedes o bien utilizar ese y ajustarlo o utilizar [este script] (https://gist.github.com/kentcdodds/11293570) para hacer tu propia versión.
 
-Esta guía fue creada por [Félix Geisendörfer] (http://felixge.de/) y está
+Esta guía fue creada por [Félix Geisendörfer] (http://felixge.de/), traducida al español por Carlos J. Martínez Díaz y está
 licenciada bajo la licencia [CC BY-SA 3.0] (http://creativecommons.org/licenses/by-sa/3.0/). 
 Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuerdo a sus preferencias.
 
