@@ -1,0 +1,578 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Guia de estilo para Node.js y JavaScript by carlosmart7104</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Guia de estilo para Node.js y JavaScript</h1>
+        <p>Una guía de estilo para código en node.js/JavaScript.</p>
+
+        <p class="view"><a href="https://github.com/carlosmart7104/guia-de-estilo-para-nodejs-y-javascript">View the Project on GitHub <small>carlosmart7104/guia-de-estilo-para-nodejs-y-javascript</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/carlosmart7104/guia-de-estilo-para-nodejs-y-javascript/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/carlosmart7104/guia-de-estilo-para-nodejs-y-javascript/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/carlosmart7104/guia-de-estilo-para-nodejs-y-javascript">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="guía-de-estilo-para-nodejs" class="anchor" href="#gu%C3%ADa-de-estilo-para-nodejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Guía de estilo para Node.js</h1>
+
+<p>Esta es una guía para escribir código Node.js coherente y estéticamente agradable.
+Se inspira en lo que es popular dentro de la comunidad, y algunas
+opiniones personales.</p>
+
+<p>Hay una .jshintrc que hace cumplir estas normas tan estrechamente como sea posible. 
+Puedes o bien utilizar ese y ajustarlo o utilizar <a href="https://gist.github.com/kentcdodds/11293570">este script</a> para hacer tu propia versión.</p>
+
+<p>Esta guía fue creada por <a href="http://felixge.de/">Félix Geisendörfer</a>, traducida al español por Carlos J. Martínez Díaz y está
+licenciada bajo la licencia <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. 
+Se le anima a descargar este repositorio y hacer los ajustes necesarios de acuerdo a sus preferencias.</p>
+
+<p><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" alt="Licencia Creative Commons"></p>
+
+<h2>
+<a id="tabla-de-contenido" class="anchor" href="#tabla-de-contenido" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tabla de contenido</h2>
+
+<h3>
+<a id="formateo" class="anchor" href="#formateo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Formateo</h3>
+
+<ul>
+<li><a href="#2-espacios-para-la-sangr%C3%ADa">2 Espacios para la sangría</a></li>
+<li><a href="#saltos-de-l%C3%ADnea">Saltos de línea</a></li>
+<li><a href="#no-deje-espacios-en-blanco">No deje espacios en blanco</a></li>
+<li><a href="#utilice-punto-y-coma">Utilice punto y coma</a></li>
+<li><a href="#80-caracteres-por-l%C3%ADnea">80 caracteres por línea</a></li>
+<li><a href="#use-comillas-simples">Use comillas simples</a></li>
+<li><a href="#las-llaves-de-apertura-van-en-la-misma-l%C3%ADnea">Las llaves de apertura van en la misma línea</a></li>
+<li><a href="#declare-una-variable-por-sentencia-var">Declare una variable por sentencia var</a></li>
+</ul>
+
+<h3>
+<a id="convenciones-de-nomenclatura" class="anchor" href="#convenciones-de-nomenclatura" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Convenciones de nomenclatura</h3>
+
+<ul>
+<li><a href="#use-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones">Use lowerCamelCase para las variables, propiedades y nombres de funciones</a></li>
+<li><a href="#use-uppercamelcase-para-nombres-de-clase">Use UpperCamelCase para nombres de clase</a></li>
+<li><a href="#use-may%C3%BAsculas-para-las-constantes">Use MAYÚSCULAS para las constantes</a></li>
+</ul>
+
+<h3>
+<a id="variables" class="anchor" href="#variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Variables</h3>
+
+<ul>
+<li><a href="#creaci%C3%B3n-de-objetos--matrices">Creación de Objetos / Matrices</a></li>
+</ul>
+
+<h3>
+<a id="condicionales" class="anchor" href="#condicionales" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Condicionales</h3>
+
+<ul>
+<li><a href="#utilice-el-operador-">Utilice el operador ===</a></li>
+<li><a href="#utilice-el-operador-ternario-en-multiples-l%C3%ADneas">Utilice el operador ternario en multiples líneas</a></li>
+<li><a href="#utilice-condiciones-descriptivas">Utilice condiciones descriptivas</a></li>
+</ul>
+
+<h3>
+<a id="funciones" class="anchor" href="#funciones" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Funciones</h3>
+
+<ul>
+<li><a href="#escriba-funciones-peque%C3%B1as">Escriba funciones pequeñas</a></li>
+<li><a href="#retorne-r%C3%A1pidamente-las-funciones">Retorne rápidamente las funciones</a></li>
+<li><a href="#nombre-sus-closures">Nombre sus closures</a></li>
+<li><a href="#no-use-closures-anidados">No use closures anidados</a></li>
+<li><a href="#concatene-los-m%C3%A9todos-claramente">Concatene los métodos claramente</a></li>
+</ul>
+
+<h3>
+<a id="comentarios" class="anchor" href="#comentarios" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Comentarios</h3>
+
+<ul>
+<li><a href="#use-diagonales-para-los-comentarios">Use diagonales para los comentarios</a></li>
+</ul>
+
+<h3>
+<a id="miscelanea" class="anchor" href="#miscelanea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Miscelanea</h3>
+
+<ul>
+<li><a href="#objectfreeze-objectpreventextensions-objectseal-with-eval">Object.freeze, Object.preventExtensions, Object.seal, with, eval</a></li>
+<li><a href="#requieres-al-principio">Requieres al principio</a></li>
+<li><a href="#getters-y-setters">Getters y setters</a></li>
+<li><a href="#no-extienda-prototypes-ya-incorporados">No extienda prototypes incorporados</a></li>
+</ul>
+
+<h2>
+<a id="formateo-1" class="anchor" href="#formateo-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Formateo</h2>
+
+<h3>
+<a id="2-espacios-para-la-sangría" class="anchor" href="#2-espacios-para-la-sangr%C3%ADa" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2 Espacios para la sangría</h3>
+
+<p>Utilice 2 espacios para indentar el código y un jure que nunca mezclará tabs y
+espacios, es un tipo especial de infierno que le está esperando de algún modo.</p>
+
+<h3>
+<a id="saltos-de-línea" class="anchor" href="#saltos-de-l%C3%ADnea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Saltos de línea</h3>
+
+<p>Use solo saltos de línea de estilo UNIX, use (<code>\ n</code>), y un carácter de nueva línea como el último carácter de un archivo. 
+Los saltos de línea de estilo Windows (<code>\ r \ n</code>) están prohibidos dentro de cualquier repositorio.</p>
+
+<h3>
+<a id="no-deje-espacios-en-blanco" class="anchor" href="#no-deje-espacios-en-blanco" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>No deje espacios en blanco</h3>
+
+<p>Al igual que se cepilla los dientes después de cada comida, limpie todo el conjunto de espacios en blanco en los archivos de JS antes de hacer un commit. De lo contrario el olor a podrido de la negligencia y el descuido finalmente le dejará sin colaboradores y/o compañeros de trabajo.</p>
+
+<h3>
+<a id="utilice-punto-y-coma" class="anchor" href="#utilice-punto-y-coma" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Utilice punto y coma</h3>
+
+<p>Según <a href="http://news.ycombinator.com/item?id=1547647">scientific research</a>, el uso de punto y coma es un valor fundamental de nuestra comunidad. 
+Tenga en cuenta los puntos de <a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding">the opposition</a>, pero sea un tradicionalista cuando se trata de abusar de los mecanismos de corrección de errores para placeres sintácticos baratos.</p>
+
+<h3>
+<a id="80-caracteres-por-línea" class="anchor" href="#80-caracteres-por-l%C3%ADnea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>80 caracteres por línea</h3>
+
+<p>Limíte sus líneas a 80 caracteres. 
+Sí, las pantallas se han vuelto mucho más grandes en los últimos años, pero su cerebro no tiene la capacidad.
+Utilice el espacio adicional para la pantalla dividida, su editor soporta eso, ¿verdad?</p>
+
+<h3>
+<a id="use-comillas-simples" class="anchor" href="#use-comillas-simples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use comillas simples</h3>
+
+<p>Use comillas simples, a menos que usted esté escribiendo JSON.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre>foo <span class="pl-k">var</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>;</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre>foo <span class="pl-k">var</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>;</pre></div>
+
+<h3>
+<a id="las-llaves-de-apertura-van-en-la-misma-línea" class="anchor" href="#las-llaves-de-apertura-van-en-la-misma-l%C3%ADnea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Las llaves de apertura van en la misma línea</h3>
+
+<p>Sus llaves de apertura van en la misma línea que el enunciado.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">if</span> (<span class="pl-c1">true</span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span> (<span class="pl-s"><span class="pl-pds">'</span>Ganaste!<span class="pl-pds">'</span></span>);
+}</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">if</span> (<span class="pl-c1">true</span>)
+{
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span> (<span class="pl-s"><span class="pl-pds">'</span>Perdiste :C<span class="pl-pds">'</span></span>);
+}</pre></div>
+
+<p>También, observe el uso de espacios en blanco antes y después de la declaración de estado.</p>
+
+<h3>
+<a id="declare-una-variable-por-sentencia-var" class="anchor" href="#declare-una-variable-por-sentencia-var" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Declare una variable por sentencia var</h3>
+
+<p>Declare una variable por sentencia var, hace que sea más fácil editar el orden de las líneas. 
+Sin embargo, ignore la <a href="http://javascript.crockford.com/code.html">Crockford</a> cuando se trata de declarar variables más profundas dentro de una función, sólo hay que poner las declaraciones siempre que tenga sentido.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> keys   <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>];
+<span class="pl-k">var</span> values <span class="pl-k">=</span> [<span class="pl-c1">23</span>, <span class="pl-c1">42</span>];
+
+<span class="pl-k">var</span> object <span class="pl-k">=</span> {};
+<span class="pl-k">while</span> (<span class="pl-smi">keys</span>.<span class="pl-c1">length</span>) {
+  <span class="pl-k">var</span> key <span class="pl-k">=</span> <span class="pl-smi">keys</span>.<span class="pl-c1">pop</span>();
+  object[key] <span class="pl-k">=</span> <span class="pl-smi">values</span>.<span class="pl-c1">pop</span>();
+}</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> keys <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>],
+    values <span class="pl-k">=</span> [<span class="pl-c1">23</span>, <span class="pl-c1">42</span>],
+    object <span class="pl-k">=</span> {},
+    key;
+
+<span class="pl-k">while</span> (<span class="pl-smi">keys</span>.<span class="pl-c1">length</span>) {
+  key <span class="pl-k">=</span> <span class="pl-smi">keys</span>.<span class="pl-c1">pop</span>();
+  object[key] <span class="pl-k">=</span> <span class="pl-smi">values</span>.<span class="pl-c1">pop</span>();
+}</pre></div>
+
+<h3>
+<a id="convenciones-de-nomenclatura-1" class="anchor" href="#convenciones-de-nomenclatura-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Convenciones de nomenclatura</h3>
+
+<h3>
+<a id="use-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones" class="anchor" href="#use-lowercamelcase-para-las-variables-propiedades-y-nombres-de-funciones" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use lowerCamelCase para las variables, propiedades y nombres de funciones</h3>
+
+<p>Las variables, propiedades y nombres de funciones deben usar <code>lowerCamelCase</code>. 
+Estos también deben ser descriptivos. 
+Las abreviaturas en variables de carácter individual y poco frecuente generalmente deben ser evitadas.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> adminUser <span class="pl-k">=</span> <span class="pl-smi">db</span>.<span class="pl-en">query</span>(<span class="pl-s"><span class="pl-pds">'</span>SELECT * FROM users ...<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> admin_user <span class="pl-k">=</span> <span class="pl-smi">db</span>.<span class="pl-en">query</span>(<span class="pl-s"><span class="pl-pds">'</span>SELECT * FROM users ...<span class="pl-pds">'</span></span>);</pre></div>
+
+<h3>
+<a id="use-uppercamelcase-para-nombres-de-clase" class="anchor" href="#use-uppercamelcase-para-nombres-de-clase" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use UpperCamelCase para nombres de clase</h3>
+
+<p>Los nombres de clase deben ser capitalizados usando <code>UpperCamelCase</code>.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">BankAccount</span>() {
+}</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">bank_Account</span>() {
+}</pre></div>
+
+<h2>
+<a id="use-mayúsculas-para-las-constantes" class="anchor" href="#use-may%C3%BAsculas-para-las-constantes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use mayúsculas para las constantes</h2>
+
+<p>Las constantes deben ser declaradas como variables regulares o propiedades de clase estáticos, utilizando todas las letras mayúsculas.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> <span class="pl-c1">SECOND</span> <span class="pl-k">=</span> <span class="pl-c1">1</span> <span class="pl-k">*</span> <span class="pl-c1">1000</span>;
+
+<span class="pl-k">function</span> <span class="pl-en">File</span>() {
+}
+<span class="pl-c1">File</span>.<span class="pl-c1">FULL_PERMISSIONS</span> <span class="pl-k">=</span> <span class="pl-c1">0777</span>;</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">SECOND</span> <span class="pl-k">=</span> <span class="pl-c1">1</span> <span class="pl-k">*</span> <span class="pl-c1">1000</span>;
+
+<span class="pl-k">function</span> <span class="pl-en">File</span>() {
+}
+<span class="pl-c1">File</span>.<span class="pl-smi">fullPermissions</span> <span class="pl-k">=</span> <span class="pl-c1">0777</span>;</pre></div>
+
+<h2>
+<a id="variables-1" class="anchor" href="#variables-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Variables</h2>
+
+<h3>
+<a id="creación-de-objetos--matrices" class="anchor" href="#creaci%C3%B3n-de-objetos--matrices" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creación de Objetos / Matrices</h3>
+
+<p>Utilice coma al final y ponga declaraciones <em>breves</em> en una sola línea. Sólo entrecomille claves cuando el intérprete lo requiera:</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> a <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">'</span>hello<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>world<span class="pl-pds">'</span></span>];
+<span class="pl-k">var</span> b <span class="pl-k">=</span> {
+  good<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>code<span class="pl-pds">'</span></span>,
+  <span class="pl-s"><span class="pl-pds">'</span>is generally<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pretty<span class="pl-pds">'</span></span>,
+};</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> a <span class="pl-k">=</span> [
+  <span class="pl-s"><span class="pl-pds">'</span>hello<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>world<span class="pl-pds">'</span></span>
+];
+<span class="pl-k">var</span> b <span class="pl-k">=</span> {<span class="pl-s"><span class="pl-pds">"</span>good<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>code<span class="pl-pds">'</span></span>
+        , is generally<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pretty<span class="pl-pds">'</span></span>
+        };</pre></div>
+
+<h2>
+<a id="condicionales-1" class="anchor" href="#condicionales-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Condicionales</h2>
+
+<h3>
+<a id="utilice-el-operador-" class="anchor" href="#utilice-el-operador-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Utilice el operador ===</h3>
+
+<p>La programación no se trata de recordar <a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators">reglas estúpidas</a>. Use el operador de igualdad triple, ya que funcionará como se espera.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> a <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+<span class="pl-k">if</span> (a <span class="pl-k">!==</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>winning<span class="pl-pds">'</span></span>);
+}
+</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> a <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+<span class="pl-k">if</span> (a <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>losing<span class="pl-pds">'</span></span>);
+}</pre></div>
+
+<h3>
+<a id="utilice-el-operador-ternario-en-multiples-líneas" class="anchor" href="#utilice-el-operador-ternario-en-multiples-l%C3%ADneas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Utilice el operador ternario en multiples líneas</h3>
+
+<p>El operador ternario no debe utilizarse en una sola línea. 
+Divídalo en varias líneas.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> foo <span class="pl-k">=</span> (a <span class="pl-k">===</span> b)
+  <span class="pl-k">?</span> <span class="pl-c1">1</span>
+  <span class="pl-k">:</span> <span class="pl-c1">2</span>;</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> foo <span class="pl-k">=</span> (a <span class="pl-k">===</span> b) <span class="pl-k">?</span> <span class="pl-c1">1</span> <span class="pl-k">:</span> <span class="pl-c1">2</span>;</pre></div>
+
+<h3>
+<a id="utilice-condiciones-descriptivas" class="anchor" href="#utilice-condiciones-descriptivas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Utilice condiciones descriptivas</h3>
+
+<p>Cualquier condición no trivial debe ser asignada a una función o variable con un nombre que la describa:</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> isValidPassword <span class="pl-k">=</span> <span class="pl-smi">password</span>.<span class="pl-c1">length</span> <span class="pl-k">&gt;=</span> <span class="pl-c1">4</span> <span class="pl-k">&amp;&amp;</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-k">^</span>(?=<span class="pl-c1">.</span><span class="pl-k">*</span><span class="pl-c1">\d</span>)<span class="pl-c1">.</span><span class="pl-k">{4,}</span><span class="pl-k">$</span><span class="pl-pds">/</span></span>.<span class="pl-c1">test</span>(password);
+
+<span class="pl-k">if</span> (isValidPassword) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>winning<span class="pl-pds">'</span></span>);
+}</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">if</span> (<span class="pl-smi">password</span>.<span class="pl-c1">length</span> <span class="pl-k">&gt;=</span> <span class="pl-c1">4</span> <span class="pl-k">&amp;&amp;</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-k">^</span>(?=<span class="pl-c1">.</span><span class="pl-k">*</span><span class="pl-c1">\d</span>)<span class="pl-c1">.</span><span class="pl-k">{4,}</span><span class="pl-k">$</span><span class="pl-pds">/</span></span>.<span class="pl-c1">test</span>(password)) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>losing<span class="pl-pds">'</span></span>);
+}</pre></div>
+
+<h2>
+<a id="funciones-1" class="anchor" href="#funciones-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Funciones</h2>
+
+<h3>
+<a id="escriba-funciones-pequeñas" class="anchor" href="#escriba-funciones-peque%C3%B1as" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Escriba funciones pequeñas</h3>
+
+<p>Mantenga sus funciones cortas. 
+Una buena función cabe en una diapositiva que las personas en la última fila de una sala grande pueden leer cómodamente. 
+Aún contando con que ellos no tengan una visión perfecta y debe limitarse a aproximadamente 15 líneas de código por función.</p>
+
+<h3>
+<a id="retorne-rápidamente-las-funciones" class="anchor" href="#retorne-r%C3%A1pidamente-las-funciones" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retorne rápidamente las funciones</h3>
+
+<p>Para evitar profundidad de anidamiento en las declaraciones if, devuelva el valor de una función tan pronto como sea posible.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">isPercentage</span>(<span class="pl-smi">val</span>) {
+  <span class="pl-k">if</span> (val <span class="pl-k">&lt;</span> <span class="pl-c1">0</span>) {
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+  }
+
+  <span class="pl-k">if</span> (val <span class="pl-k">&gt;</span> <span class="pl-c1">100</span>) {
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+  }
+
+  <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+}</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">isPercentage</span>(<span class="pl-smi">val</span>) {
+  <span class="pl-k">if</span> (val <span class="pl-k">&gt;=</span> <span class="pl-c1">0</span>) {
+    <span class="pl-k">if</span> (val <span class="pl-k">&lt;</span> <span class="pl-c1">100</span>) {
+      <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+    } <span class="pl-k">else</span> {
+      <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+    }
+  } <span class="pl-k">else</span> {
+    <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+  }
+}</pre></div>
+
+<p>O para este ejemplo particular, también puede estar bien para acortar las cosas aún mejor:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">isPercentage</span>(<span class="pl-smi">val</span>) {
+  <span class="pl-k">var</span> isInRange <span class="pl-k">=</span> (val <span class="pl-k">&gt;=</span> <span class="pl-c1">0</span> <span class="pl-k">&amp;&amp;</span> val <span class="pl-k">&lt;=</span> <span class="pl-c1">100</span>);
+  <span class="pl-k">return</span> isInRange;
+}</pre></div>
+
+<h3>
+<a id="nombre-sus-closures" class="anchor" href="#nombre-sus-closures" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Nombre sus closures</h3>
+
+<p>Siéntase libre de dar a sus closures un nombre. 
+Esto demuestra que usted se preocupa por ellos, y producirá mejores seguimientos de stack, heap y esquemas de cpu.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">req</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> <span class="pl-en">onEnd</span>() {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>winning<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">req</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>losing<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<h3>
+<a id="no-use-closures-anidados" class="anchor" href="#no-use-closures-anidados" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>No use closures anidados</h3>
+
+<p>Utilice los closures, pero no los anide. 
+De lo contrario, el código se convertirá en un desastre.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">setTimeout</span>(<span class="pl-k">function</span>() {
+  <span class="pl-smi">client</span>.<span class="pl-en">connect</span>(afterConnect);
+}, <span class="pl-c1">1000</span>);
+
+<span class="pl-k">function</span> <span class="pl-en">afterConnect</span>() {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>winning<span class="pl-pds">'</span></span>);
+}</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">setTimeout</span>(<span class="pl-k">function</span>() {
+  <span class="pl-smi">client</span>.<span class="pl-en">connect</span>(<span class="pl-k">function</span>() {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>losing<span class="pl-pds">'</span></span>);
+  });
+}, <span class="pl-c1">1000</span>);</pre></div>
+
+<h3>
+<a id="concatene-los-métodos-claramente" class="anchor" href="#concatene-los-m%C3%A9todos-claramente" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concatene los métodos claramente</h3>
+
+<p>Si desea encadenar métodos se debe utilizar un método por línea.
+También debe sangrar estos métodos lo que hace más fácil denotar que son parte de la misma cadena.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre>User
+  .<span class="pl-en">findOne</span>({ name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span> })
+  .<span class="pl-en">populate</span>(<span class="pl-s"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">exec</span>(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">user</span>) {
+    <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+  });</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre>User
+.<span class="pl-en">findOne</span>({ name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span> })
+.<span class="pl-en">populate</span>(<span class="pl-s"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>)
+.<span class="pl-c1">exec</span>(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">user</span>) {
+  <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+});
+
+<span class="pl-smi">User</span>.<span class="pl-en">findOne</span>({ name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span> })
+  .<span class="pl-en">populate</span>(<span class="pl-s"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">exec</span>(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">user</span>) {
+    <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+  });
+
+<span class="pl-smi">User</span>.<span class="pl-en">findOne</span>({ name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span> }).<span class="pl-en">populate</span>(<span class="pl-s"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>)
+.<span class="pl-c1">exec</span>(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">user</span>) {
+  <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+});
+
+<span class="pl-smi">User</span>.<span class="pl-en">findOne</span>({ name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span> }).<span class="pl-en">populate</span>(<span class="pl-s"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>)
+  .<span class="pl-c1">exec</span>(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">user</span>) {
+    <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+  });</pre></div>
+
+<h2>
+<a id="comentarios-1" class="anchor" href="#comentarios-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Comentarios</h2>
+
+<h3>
+<a id="use-diagonales-para-los-comentarios" class="anchor" href="#use-diagonales-para-los-comentarios" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use diagonales para los comentarios</h3>
+
+<p>Utilice diagonales tanto para una sola línea como para múltiples líneas de comentarios. 
+Trate de escribir comentarios que expliquen los mecanismos de nivel superior o aclaren segmentos difíciles de su código. 
+No use los comentarios para replantear las cosas triviales.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// 'ID_SOMETHING=VALUE' -&gt; ['ID_SOMETHING=VALUE', 'SOMETHING', 'VALUE']</span>
+<span class="pl-k">var</span> matches <span class="pl-k">=</span> <span class="pl-smi">item</span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span>ID_(<span class="pl-c1">[<span class="pl-k">^</span><span class="pl-c1">\n</span>]</span><span class="pl-k">+</span>)=(<span class="pl-c1">[<span class="pl-k">^</span><span class="pl-c1">\n</span>]</span><span class="pl-k">+</span>)<span class="pl-pds">/</span></span>));
+
+<span class="pl-c">// This function has a nasty side effect where a failure to increment a</span>
+<span class="pl-c">// redis counter used for statistics will cause an exception. This needs</span>
+<span class="pl-c">// to be fixed in a later iteration.</span>
+<span class="pl-k">function</span> <span class="pl-en">loadUser</span>(<span class="pl-smi">id</span>, <span class="pl-smi">cb</span>) {
+  <span class="pl-c">// ...</span>
+}
+
+<span class="pl-k">var</span> isSessionValid <span class="pl-k">=</span> (<span class="pl-smi">session</span>.<span class="pl-smi">expires</span> <span class="pl-k">&lt;</span> <span class="pl-c1">Date</span>.<span class="pl-en">now</span>());
+<span class="pl-k">if</span> (isSessionValid) {
+  <span class="pl-c">// ...</span>
+}</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// Execute a regex</span>
+<span class="pl-k">var</span> matches <span class="pl-k">=</span> <span class="pl-smi">item</span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span>ID_(<span class="pl-c1">[<span class="pl-k">^</span><span class="pl-c1">\n</span>]</span><span class="pl-k">+</span>)=(<span class="pl-c1">[<span class="pl-k">^</span><span class="pl-c1">\n</span>]</span><span class="pl-k">+</span>)<span class="pl-pds">/</span></span>);
+
+<span class="pl-c">// Usage: loadUser(5, function() { ... })</span>
+<span class="pl-k">function</span> <span class="pl-en">loadUser</span>(<span class="pl-smi">id</span>, <span class="pl-smi">cb</span>) {
+  <span class="pl-c">// ...</span>
+}
+
+<span class="pl-c">// Check if the session is valid</span>
+<span class="pl-k">var</span> isSessionValid <span class="pl-k">=</span> (<span class="pl-smi">session</span>.<span class="pl-smi">expires</span> <span class="pl-k">&lt;</span> <span class="pl-c1">Date</span>.<span class="pl-en">now</span>());
+<span class="pl-c">// If the session is valid</span>
+<span class="pl-k">if</span> (isSessionValid) {
+  <span class="pl-c">// ...</span>
+}</pre></div>
+
+<h2>
+<a id="miscelanea-1" class="anchor" href="#miscelanea-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Miscelanea</h2>
+
+<h3>
+<a id="objectfreeze-objectpreventextensions-objectseal-with-eval" class="anchor" href="#objectfreeze-objectpreventextensions-objectseal-with-eval" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Object.freeze, Object.preventExtensions, Object.seal, with, eval</h3>
+
+<p>Mierdas locas que es probable que nunca necesite. 
+Manténgase alejado de ellas.</p>
+
+<h3>
+<a id="requieres-al-principio" class="anchor" href="#requieres-al-principio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requieres al principio</h3>
+
+<p>Ponga siempre los requieres en la parte superior del archivo para ilustrar claramente sus dependencias. Además de dar una visión general de los demás en un vistazo rápido de las dependencias y posible impacto de la memoria, que permite determinar si necesitan un archivo package.json si optan por utilizar el archivo en otro lugar.</p>
+
+<h3>
+<a id="getters-y-setters" class="anchor" href="#getters-y-setters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getters y setters</h3>
+
+<p>No utilice setters, causan más problemas para las personas que tratan de utilizar su software de los que pueden resolver.</p>
+
+<p>Siéntase libre de utilizar getters que están libres de los <a href="http://en.wikipedia.org/wiki/Side_effect_(computer_science)">efectos secundarios</a>, al igual que proporcionar una propiedad length para una colección de clases.</p>
+
+<h3>
+<a id="no-extienda-prototypes-ya-incorporados" class="anchor" href="#no-extienda-prototypes-ya-incorporados" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>No extienda prototypes ya incorporados</h3>
+
+<p>No extienda el prototype de objetos nativos de JavaScript. 
+Su yo del futuro estará por siempre agradecido.</p>
+
+<p><em>Correcto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> a <span class="pl-k">=</span> [];
+<span class="pl-k">if</span> (<span class="pl-k">!</span><span class="pl-smi">a</span>.<span class="pl-c1">length</span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>winning<span class="pl-pds">'</span></span>);
+}</pre></div>
+
+<p><em>Incorrecto:</em></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">Array</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">empty</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+  <span class="pl-k">return</span> <span class="pl-k">!</span><span class="pl-v">this</span>.<span class="pl-c1">length</span>;
+}
+
+<span class="pl-k">var</span> a <span class="pl-k">=</span> [];
+<span class="pl-k">if</span> (<span class="pl-smi">a</span>.<span class="pl-en">empty</span>()) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>losing<span class="pl-pds">'</span></span>);
+}</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/carlosmart7104">carlosmart7104</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
